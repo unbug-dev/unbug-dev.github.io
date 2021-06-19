@@ -199,6 +199,10 @@ This is the best bit!
 
 
 @media only screen and (max-width: 400px) {
+  body {
+    padding: 1px 10px;
+  }
+  
   h1 {
     color: #ffffff;
     font-weight: 700;
