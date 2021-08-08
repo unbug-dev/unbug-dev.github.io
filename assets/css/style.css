@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 } */
 
 #header .logo img {
-  width: 15%;
+  max-width: 15%;
 }
 
 .scrolled-offset {
@@ -158,8 +158,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media only screen and (max-width: 600px) {
-  #header .logo img {
-    width: 25%;
+  .logo img {
+    max-width: 25%;
   }
 }
 
