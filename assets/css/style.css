@@ -157,6 +157,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 70px;
 }
 
+/* Extra Large Screen  1400+ */
+@media only screen and (max-width: 1400px) {
+  .logo img {
+    max-width: 50%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .logo img {
     max-width: 25%;
