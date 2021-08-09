@@ -904,6 +904,7 @@
 
           <div class="col-lg-12">
             <form id="submit-form" action="" class="email-form">
+              <div class="row w-100 justify-content-center mrl-0 pdb-20 alert-box"></div>
               <div class="row">
                 <div class="col form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -917,11 +918,6 @@
               </div>
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
@@ -966,18 +962,29 @@
   <script>
     $("#submit-form").submit((e)=>{
         e.preventDefault()
+        $(".alert-box").html('<div class="alert-unbug sending">Please wait, sending your message to unBug. &nbsp;<i class="bx bx-loader-alt load-it"></i></div>');
+        $(':input[type="submit"]').prop('disabled', true);
+        $(':input[type="submit"]').text('Sending...');
         $.ajax({
             url:"https://script.google.com/macros/s/AKfycbzos7Dg5ITSTdKxRM0W9Zsk9LuRvHctFaRq1M2frQ/exec",
             data:$("#submit-form").serialize(),
             method:"post",
             success:function (response){
-                alert("Form submitted successfully")
-                window.location.reload()
-                //window.location.href="https://google.com"
+              $(".alert-box").html('<div class="alert-unbug success">Success! your message has been sent to unBug, we will get in touch with you soon. &nbsp;<i class="bx bx-badge-check zoom-it"></i></div>')
+                $("#submit-form").trigger("reset");
+              setTimeout(function () {
+                       $('.alert-box').html('');
+                   }, 4500);
+              $(':input[type="submit"]').prop('disabled', false);
+              $(':input[type="submit"]').text('Send Message');
             },
             error:function (err){
-                alert("Something Error")
-
+                $(".alert-box").html('<div class="alert-unbug failed">Aw snap! message sending failed. Try after sometime. &nbsp;<i class="bx bx-upside-down load-it-less"></i></div>')
+                setTimeout(function () {
+                     $('.alert-box').html('');
+                 }, 4500);
+                $(':input[type="submit"]').prop('disabled', false);
+                $(':input[type="submit"]').text('Send Message');
             }
         })
     })
