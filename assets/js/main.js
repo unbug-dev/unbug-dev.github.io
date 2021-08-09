@@ -97,12 +97,48 @@
    * Back to top button
    */
   let backtotop = select('.back-to-top')
+  let head = select('#header')
+  let logo_txt = select('.un-text')
+  let logo_span = select('.un-span')
+  let nav_tog = select('.mobile-nav-toggle')
   if (backtotop) {
     const toggleBacktotop = () => {
       if (window.scrollY > 100) {
         backtotop.classList.add('active')
+        head.classList.remove('dark')
+        head.classList.add('light')
+        logo_txt.classList.remove('white-color')
+        logo_txt.classList.add('dark-blue-color')
+        logo_span.classList.remove('light-violet-color')
+        logo_span.classList.add('violet-color')
+        nav_tog.classList.remove('white-color')
+        nav_tog.classList.add('dark-blue-color')
+        $(function() {
+          $('.nav-link').each(function() {
+            $(this).removeClass('white-color');
+            $(this).addClass('dark-blue-color');
+          });
+        })
+        $('.nav-ul').addClass('white-background');
+        $('.nav-ul').removeClass('dark-blue-background');
       } else {
         backtotop.classList.remove('active')
+        head.classList.add('dark')
+        head.classList.remove('light')
+        logo_txt.classList.add('white-color')
+        logo_txt.classList.remove('dark-blue-color')
+        logo_span.classList.add('light-violet-color')
+        logo_span.classList.remove('violet-color')
+        nav_tog.classList.add('white-color')
+        nav_tog.classList.remove('dark-blue-color')
+        $(function() {
+          $('.nav-link').each(function() {
+            $(this).addClass('white-color');
+            $(this).removeClass('dark-blue-color');
+          });
+        })
+        $('.nav-ul').removeClass('white-background');
+        $('.nav-ul').addClass('dark-blue-background');
       }
     }
     window.addEventListener('load', toggleBacktotop)

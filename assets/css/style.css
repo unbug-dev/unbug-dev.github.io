@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background: rgb(51, 127, 226);
+  background: #2D286B;
   color: #fff;
 }
 
@@ -120,11 +120,18 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
   transition: all 0.5s;
   z-index: 997;
   height: 86px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.light{
+  background: #fff !important;
+}
+
+.dark{
+  background: #2D286B !important;
 }
 
 #header.fixed-top {
@@ -141,12 +148,28 @@ h1, h2, h3, h4, h5, h6 {
    font-family: "Poppins", sans-serif; 
 }
 
-#header .logo a{
-  color: #2f2e41;
+.white-color{
+  color: #fff !important;
 }
 
-#header .logo a span{
-  color: #4F46BA;
+.navbar-mobile .white-background{
+  background: #fff !important;
+}
+
+.light-violet-color{
+  color: #8984D8 !important;
+}
+
+.dark-blue-color{
+  color: #2f2e41 !important;
+}
+
+.violet-color{
+  color: #4F46BA !important;
+}
+
+.navbar-mobile .dark-blue-background{
+  background: #2f2e41 !important;
 }
 
 /* #header .logo a {
@@ -212,7 +235,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 3px;
   font-size: 15px;
   font-weight: 600;
-  color: #222222;
   white-space: nowrap;
   transition: 0.3s;
   position: relative;
@@ -242,8 +264,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #4f46ba;
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile .active:focus, .navbar-mobile li:hover > a {
+  color: #4f46ba !important;
 }
 
 .navbar .dropdown ul {
@@ -342,6 +364,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   z-index: 999;
 }
+
+
 
 .navbar-mobile .mobile-nav-toggle {
   position: absolute;
@@ -1621,7 +1645,7 @@ section {
   font-size: 18px;
   display: inline-block;
   background: #fff2d1;
-  color: #daa520;
+  color: #4F46BA;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1633,7 +1657,7 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: #daa520;
+  background: #4F46BA;
   color: #fff;
   text-decoration: none;
 }
