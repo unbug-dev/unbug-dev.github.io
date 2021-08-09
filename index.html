@@ -62,7 +62,7 @@
       <!-- <a href="index.html" class="logo"><img src="./assets/img/logo/unbug main.png" alt=""></a> -->
 
       <nav id="navbar" class="navbar">
-        <ul class="nav-ul dark-blue-background">
+        <ul class="nav-ul dark-violet-background">
           <li><a class="nav-link white-color scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link white-color scrollto" href="#about">About</a></li>
           <li><a class="nav-link white-color scrollto" href="#services">Services</a></li>
@@ -299,40 +299,6 @@
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-  <!-- Google Contact Form Submission -->
-  <script>
-    $("#submit-form").submit((e)=>{
-        e.preventDefault()
-        $(".alert-box").html('<div class="alert-unbug sending">Please wait, sending your message to unBug. &nbsp;<i class="bx bx-loader-alt load-it"></i></div>');
-        $(':input[type="submit"]').prop('disabled', true);
-        $(':input[type="submit"]').text('Sending...');
-        $.ajax({
-            url:"https://script.google.com/macros/s/AKfycbzos7Dg5ITSTdKxRM0W9Zsk9LuRvHctFaRq1M2frQ/exec",
-            data:$("#submit-form").serialize(),
-            method:"post",
-            success:function (response){
-              $(".alert-box").html('<div class="alert-unbug success">Success! your message has been sent to unBug, we will get in touch with you soon. &nbsp;<i class="bx bx-badge-check zoom-it"></i></div>')
-                $("#submit-form").trigger("reset");
-              setTimeout(function () {
-                       $('.alert-box').html('');
-                   }, 4500);
-              $(':input[type="submit"]').prop('disabled', false);
-              $(':input[type="submit"]').text('Send Message');
-            },
-            error:function (err){
-                $(".alert-box").html('<div class="alert-unbug failed">Aw snap! message sending failed. Try after sometime. &nbsp;<i class="bx bx-upside-down load-it-less"></i></div>')
-                setTimeout(function () {
-                     $('.alert-box').html('');
-                 }, 4500);
-                $(':input[type="submit"]').prop('disabled', false);
-                $(':input[type="submit"]').text('Send Message');
-            }
-        })
-    })
-</script>
-
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>

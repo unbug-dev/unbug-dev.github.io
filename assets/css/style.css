@@ -172,6 +172,10 @@ h1, h2, h3, h4, h5, h6 {
   background: #2f2e41 !important;
 }
 
+.navbar-mobile .dark-violet-background{
+  background: #2d286b !important;
+}
+
 /* #header .logo a {
   color: #222222;
 }
@@ -1644,7 +1648,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #fff2d1;
+  background: #fff;
   color: #4F46BA;
   line-height: 1;
   padding: 8px 0;

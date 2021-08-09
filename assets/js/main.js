@@ -120,7 +120,7 @@
           });
         })
         $('.nav-ul').addClass('white-background');
-        $('.nav-ul').removeClass('dark-blue-background');
+        $('.nav-ul').removeClass('dark-violet-background');
       } else {
         backtotop.classList.remove('active')
         head.classList.add('dark')
@@ -138,7 +138,7 @@
           });
         })
         $('.nav-ul').removeClass('white-background');
-        $('.nav-ul').addClass('dark-blue-background');
+        $('.nav-ul').addClass('dark-violet-background');
       }
     }
     window.addEventListener('load', toggleBacktotop)
@@ -310,5 +310,34 @@
       mirror: false
     })
   });
+
+  $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $(".alert-box").html('<div class="alert-unbug sending">Please wait, sending your message to unBug. &nbsp;<i class="bx bx-loader-alt load-it"></i></div>');
+        $(':input[type="submit"]').prop('disabled', true);
+        $(':input[type="submit"]').text('Sending...');
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbzos7Dg5ITSTdKxRM0W9Zsk9LuRvHctFaRq1M2frQ/exec",
+            data:$("#submit-form").serialize(),
+            method:"post",
+            success:function (response){
+              $(".alert-box").html('<div class="alert-unbug success">Success! your message has been sent to unBug, we will get in touch with you soon. &nbsp;<i class="bx bx-badge-check zoom-it"></i></div>')
+                $("#submit-form").trigger("reset");
+              setTimeout(function () {
+                       $('.alert-box').html('');
+                   }, 4500);
+              $(':input[type="submit"]').prop('disabled', false);
+              $(':input[type="submit"]').text('Send Message');
+            },
+            error:function (err){
+                $(".alert-box").html('<div class="alert-unbug failed">Aw snap! message sending failed. Try after sometime. &nbsp;<i class="bx bx-upside-down load-it-less"></i></div>')
+                setTimeout(function () {
+                     $('.alert-box').html('');
+                 }, 4500);
+                $(':input[type="submit"]').prop('disabled', false);
+                $(':input[type="submit"]').text('Send Message');
+            }
+        })
+    })
 
 })()
