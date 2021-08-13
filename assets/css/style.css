@@ -30,6 +30,14 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+#preloader img{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+}
+
 #preloader {
   position: fixed;
   top: 0;
@@ -38,21 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #fff;
-}
-
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #4f46ba;
-  border-top-color: #e2eefd;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite;
+  background: #FDFDFE;
 }
 
 @-webkit-keyframes animate-preloader {

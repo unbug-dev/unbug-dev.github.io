@@ -198,8 +198,16 @@
    */
   let preloader = select('#preloader');
   if (preloader) {
+    var past_time = $.now();
     window.addEventListener('load', () => {
-      preloader.remove()
+      var cur_time = $.now();
+      if(((cur_time - past_time)/1000)>3){
+        preloader.remove();
+      }else{
+        window.setTimeout(() => {
+          preloader.remove();
+        }, 2000);
+      }
     });
   }
 
