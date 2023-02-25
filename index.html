@@ -434,8 +434,8 @@
           <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
         <div class="copyright">
-          Copyright &copy; <strong><span id="date"></span></strong
-          >. All Rights Reserved
+          Copyright &copy; <strong><span id="date"></span></strong>. All Rights
+          Reserved
         </div>
       </div>
     </footer>
@@ -452,6 +452,21 @@
     <script>
       const date = document.getElementById("date");
       date.innerHTML = new Date().getFullYear();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NBK5F65P41"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NBK5F65P41");
     </script>
 
     <!--Start of Tawk.to Script-->
